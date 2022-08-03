@@ -1,0 +1,84 @@
+{% extends 'core_module/base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
+
+{% block content %} 
+
+    <main class="container">
+        <div class="row">
+            <div class="col-md-6 mt-2">
+                <h6>Your profile</h6>
+                <div class="main-card border rounded p-2 shadow-sm">
+                    <div class="d-flex float-end toggle-btn"><input type="checkbox" id="switch" /><label id="switch-id" for="switch">Toggle</label></div>
+                    <div class="mb-2 border rounded bg-info bg-opacity-25 p-2 d-flex  justify-content-center w-50 h-50 text-dark">profile img</div>
+                    <div class="">
+                        <h6 class="m-0" >Name : Vikas kumar</h6>
+                        <h6 class="m-0" >Contact : 9958896169</h6>
+                        <h6 class="m-0" >Address : <address>D-4/132 chhattarpur new delhi</address> </h6>
+                        <div class=" border rounded bg-warning bg-opacity-75 p-2 d-flex  h-50 text-dark">Car number : DL-3S-CA-2229</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-2">
+                <div class="main-card">  
+                    <h6>Recenet message</h6>
+                    <div class=" border rounded p-2 shadow-sm">
+                        <div class="col-12 border p-1 mb-2 rounded bg-gradient bg-primary bg-opacity-25">
+                            <div class="action d-flex float-end  m-1 rounded action-btn"  >
+                                <a class="text-decoration-none text-light" href="#modal-center" uk-toggle><small>View</small></a>
+                            </div>
+                            <small>Vikas kumar</small>
+                            <p class="m-0">Lorem ipsum dolor sit amet.</p>     
+                        </div>
+                        <div class="col-12 border p-1 mb-2 rounded bg-gradient bg-primary bg-opacity-25">
+                            <div class="action d-flex float-end  m-1 rounded action-btn"  >
+                                <a class="text-decoration-none text-light" href="#modal-center" uk-toggle><small>View</small></a>
+                            </div>
+                            <small>Vikas kumar</small>
+                            <p class="m-0">Lorem ipsum dolor sit amet.</p>   
+                        </div>
+                        <div class="col-12 border p-1 mb-2 rounded bg-gradient bg-primary bg-opacity-25">
+                            <div class="action d-flex float-end  m-1 rounded action-btn"  >
+                                <a class="text-decoration-none text-light" href="#modal-center" uk-toggle><small>View</small></a>
+                            </div>
+                            <small>Vikas kumar</small>
+                            <p class="m-0">Lorem ipsum dolor sit amet.</p>  
+                        </div>
+                        <div class="d-flex justify-content-center m-1">
+                            <div class="action-btn d-flex justify-content-center p-1 w-50 rounded"><small>See all</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- action modal here -->
+    <div id="modal-center" class="uk-flex-top" uk-modal>
+        <div class="rounded uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+    
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="detail">
+            <h6 class="m-0">Name : Vikas </h6>
+            <h6 class="m-0">Phone : 892056327</h6>
+            <h6 class="m-0">Date : 22.07.2022, <span> 10.25 PM</span></h6>
+            <div class="message border position-relative rounded p-2 shadow-sm mt-2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rem eaque molestiae eveniet ab non?
+                <br>
+            </div>
+
+            <div class="chat mt-2">
+                <div class="action d-flex float-end  m-1 rounded action-btn "><small>Action</small></div>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+    <!-- end modal     -->
+
+{% endblock %}

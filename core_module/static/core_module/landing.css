@@ -1,0 +1,22 @@
+hr{
+    color:black;
+    size: 2px;
+}
+
+.main-section{
+    height: 80vh;
+}
+
+/* gradient backgrund color */
+.get-qr{
+    background: linear-gradient(to right, #0062E6, #ff33ee);
+    background-size: 100% 100%;
+
+}
+
+/* center a div */
+.div-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,56 @@
+{% extends 'core_module/base.html' %}
+{% load static %}
+{% block title %} Welcome {{details}} {% endblock %}
+
+{% block content %} 
+<link rel="stylesheet" href="{% static 'core_module/landing.css' %}?{% now 'U' %}">
+
+    <main class="bg-dark bg-opacity-75 main-section">
+        <div  class="container bg-dark bg-opacity-50 p-2 ">
+            <div class="row m-1 d-flex justify-content-around ">
+                <h3 class="text-light text-center"> <b>Welcome buddy !</b></h3>
+                
+                <div class="col-md-6 p-3 border info-card border-2 rounded border-light text-light mb-4 ">
+                    {% if details is not None %}
+                        <h4 class="text-light m-0"><strong>Name</strong> : {{ details.full_name }}</h4>
+                        <h5 class="text-light m-0"><strong>Email</strong> : {{ details.email }} </h5>
+                        <h5 class="text-light m-0"><strong>Phone</strong> : {{ details.phone_number }}</h5>
+                        <h5 class="text-light m-0"><strong>Address</strong> : {{ details.address }}</h5>
+                    {% else %} 
+                        <div class="uk-margin d-flex justify-content-center mt-2">
+                            <form class="uk-search uk-search-default ">
+                                <span class="uk-search-icon-flip" uk-search-icon></span>
+                                <input class="uk-search-input" type="search" placeholder="Search">
+                            </form>
+                        </div>
+                     {% endif %} 
+                </div>
+                <div class="col-md-5 p-2 border border-2 border-light text-light rounded ">
+                    <form action="" method="post">
+                        <input type="text" class="mb-2 uk-textarea p-1 w-50 rounded" placeholder="Enter your name ...">
+                        <textarea name="text-area-message" id="" class="uk-textarea rounded mb-2" placeholder="Please write your review ..."></textarea>
+                        <input type="file" name="" class="border p-1 rounded mt-1 w-50" id="" >
+                        <br>
+                        <button type="submit" class="action-btn action uk-button-secondary p-1 rounded uk-button- mt-3" >Send message</button>
+                    </form>
+
+                </div>
+            </div>
+            <div class="row d-flex justify-content-around  mt-5 m-1">
+                <div class="get-qr col-md-6 rounded uk-box-shadow-large">
+                    <div class="border border-3 rounded m-2">
+                        <div class="border border-2 rounded m-1">
+                            <h3 class="text-light m-2 text-center">
+                                <b>Get Your own QR !</b>
+                            </h3>
+                            <h5 class="text-light m-2 text-center p-1">
+                                <!-- scan button -->
+                                <button class="action-btn action uk-button-secondary p-2 rounded uk-button- mt-2 mb-2" >Sign up</button>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% endblock %}

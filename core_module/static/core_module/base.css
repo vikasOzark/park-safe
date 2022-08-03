@@ -1,0 +1,81 @@
+*{
+    box-sizing: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bg{
+    background-color: rgb(65, 111, 135);
+}
+
+@media  (max-width: 450px) {
+    .menu{
+        display: none;
+    }
+}
+    
+body  {
+    color:rgb(75, 108, 115);
+    height: 100vh;
+}
+
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  #switch-id {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 3rem;
+    height: 1;
+    background: rgb(185, 184, 184);
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+  
+  #switch-id:after {
+    content: '';
+    position: absolute;
+    top: 0.2rem;
+    left: 0.2rem;
+    width: 1rem;
+    height: 1rem;
+    background: rgb(255, 255, 255);
+    border-radius: 90px;
+    transition: 0.3s;
+    box-shadow: 1px 1px 5px 0.2rem rgb(183, 183, 183);
+  }
+  
+  input:checked + #switch-id {
+    background: #60da55;
+  }
+  
+  input:checked + #switch-id:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  
+  #switch-id:active:after {
+    width: 1rem;
+  }
+
+.action-btn{
+    padding:0.2rem 0.7rem;
+    cursor: pointer;
+    color:white;
+    background-color: rgb(65, 111, 135);
+  }
+
+.action-btn:hover{
+    background-color: rgb(124, 172, 182);
+    box-shadow: 3px 3px 10px rgb(123, 118, 118);
+    transition: all 0.2s ease-in-out;
+}
+
+.message{
+  background-color: rgba(230, 226, 226, 0.661);
+}
+
