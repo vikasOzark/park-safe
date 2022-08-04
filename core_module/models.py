@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User, AbstractBaseUser, BaseUserManager
 import uuid
+from random import randint
 # Create your models here.
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None):
@@ -22,18 +23,18 @@ class UserManager(BaseUserManager):
         )
 
         user.is_admin = True
-        user.is_staff = True
+        # user.is_staff = True
         user.is_superuser = True
 
         user.save(using=self._db)
         return user
 
 class User(AbstractBaseUser):
-    full_name           = models.CharField(verbose_name="Full name", max_length=20)
-    uuid                = models.UUIDField(verbose_name="Unique ID",unique=True, default=uuid.uuid4, editable=False, db_index=True)
+    full_name           = models.CharField(verbose_name="Full name", max_length=20, null=True)
+    unique_id                = models.UUIDField(verbose_name="Unique ID",unique=True, default=randint(100000,999999), editable=False, db_index=True)
     email               = models.EmailField( verbose_name="email", max_length=60, unique=True)
     is_email_verified   = models.BooleanField(default=False)
-    username            = models.CharField(max_length=20, unique=True)
+    username            = models.CharField(max_length=20, unique=True, null=True)
     address             = models.CharField(max_length=100, null=True)
     phone_number        = models.PositiveIntegerField(null=True)
     is_phone_verified   = models.BooleanField(default=False)

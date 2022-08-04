@@ -91,11 +91,13 @@ class MyLoginForm(AuthenticationForm):
     username = forms.EmailField(
         required=False,
         label='Email',
-        widget=forms.EmailInput(
+        widget=forms.TextInput(
             attrs={
                 'class': 'uk-input mb-2 fw-bold',
-                'autocomplete': 'email'
-                }))
+                'required': 'false'
+                },
+                
+                ))
 
     password = forms.CharField(
         required=False,

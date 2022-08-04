@@ -31,7 +31,7 @@ class RegisterView(View):
                 password = form.cleaned_data['password1']
             )
             auth_login(request, auth_user)
-            return redirect(request, 'core_module/index.html')
+            return redirect('/')
         
         return render(request, template_name)
 
